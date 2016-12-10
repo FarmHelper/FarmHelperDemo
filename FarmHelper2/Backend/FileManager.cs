@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -15,13 +16,12 @@ namespace FarmHelper2.Backend
 
             string[] lines;
 
-
-            lines = System.IO.File.ReadAllLines(@"~/FarmHelper2.txt");
+            lines = File.ReadAllLines(@"D:\www\FarmHelper\Backend\TextFile1.txt");
 
             foreach (string line in lines)
             {
                 string[] param = line.Split(' ');
-                Planta planta = new Planta(param[1], param[2], int.Parse(param[3]), int.Parse(param[4]));
+                Planta planta = new Planta(param[0], param[1], int.Parse(param[2]), int.Parse(param[3]), int.Parse(param[4]));
                 lista.Add(planta);
             }
 

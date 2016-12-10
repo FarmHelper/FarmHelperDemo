@@ -12,7 +12,7 @@ namespace FarmHelper2
         {
             // Web API configuration and services
 
-            //FileManager.Main();
+            List<Planta> lista = Champ.best("Fertil", 20, 16);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

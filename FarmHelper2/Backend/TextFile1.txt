@@ -1,1 +1,15 @@
-﻿
+﻿Grau Fertil 20 22
+Orz Fertil 20 5
+Porumb Toate 20 25
+Orez Argilos 55 16
+Soia Arid 35 22
+Secara Toate 60 10
+Fasole Toate 35 10
+Rapita Argilos 20 10
+Ovaz Fertil 30 16
+Cartof Fertil 20 16
+Varza Fertil 35 22
+Sfecla Argilos 40 16
+Pepene Argilos 25 22
+Dovleac Arid 50 25
+da Fertil 20 15

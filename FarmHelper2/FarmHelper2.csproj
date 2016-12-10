@@ -166,10 +166,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Backend\champ.cs" />
+    <Compile Include="Backend\Champ.cs" />
     <Compile Include="Backend\FileManager.cs" />
     <Compile Include="Backend\Parcela.cs" />
     <Compile Include="Backend\Planta.cs" />
+    <Compile Include="Backend\Transfer.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlantsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,7 +179,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Backend\TextFile1.txt" />
+    <Content Include="Backend\TextFile1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="FarmApp\app.module.js" />

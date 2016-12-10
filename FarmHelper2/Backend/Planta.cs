@@ -12,14 +12,17 @@ namespace FarmHelper2.Backend
         public int umiditate { get; set; }
         public int temperatura { get; set;}
         public double scor { get; set; }
+        public double procent { get; set; }
+        public double tone { get; set; }
         
 
-        public Planta(string n, string p, int u, int t)
+        public Planta(string n, string p, int u, int c, int t)
         {
             this.nume = n;
             this.pamant = p;
             this.umiditate = u;
-            this.temperatura = t;
+            this.temperatura = c;
+            this.tone = t;
         }
     }
 }
