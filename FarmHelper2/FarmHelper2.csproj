@@ -188,7 +188,9 @@
     <Content Include="FarmApp\appStyle.css" />
     <Content Include="FarmApp\Scripts\httpService.js" />
     <Content Include="FarmApp\Scripts\landingController.js" />
+    <Content Include="FarmApp\Scripts\mainController.js" />
     <Content Include="FarmApp\Views\LandingPage.html" />
+    <Content Include="FarmApp\Views\MainPage.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
