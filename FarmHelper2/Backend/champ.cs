@@ -23,7 +23,7 @@ namespace FarmHelper2.Backend
                     }
                 }
 
-                Planta aux = new Planta("", "", 0, 0, 0);
+                Planta aux = new Planta("", "", 0, 0, 0, 0);
 
                 aux.nume = lista[i].nume;
                 aux.pamant = lista[i].pamant;
@@ -31,6 +31,7 @@ namespace FarmHelper2.Backend
                 aux.temperatura = lista[i].temperatura;
                 aux.umiditate = lista[i].umiditate;
                 aux.tone = lista[i].tone;
+                aux.pret = lista[i].pret;
 
                 lista[i].nume = lista[t].nume;
                 lista[i].pamant = lista[t].pamant;
@@ -38,6 +39,7 @@ namespace FarmHelper2.Backend
                 lista[i].temperatura = lista[t].temperatura;
                 lista[i].umiditate = lista[t].umiditate;
                 lista[i].tone = lista[t].tone;
+                lista[i].pret = lista[t].pret;
 
                 lista[t].nume = aux.nume;
                 lista[t].pamant = aux.pamant;
@@ -45,12 +47,35 @@ namespace FarmHelper2.Backend
                 lista[t].temperatura = aux.temperatura;
                 lista[t].umiditate = aux.umiditate;
                 lista[t].tone = aux.tone;
-
+                lista[t].pret = aux.pret;
             }
 
             return lista;
                   
        }
+
+        public static List<Planta> valid(List <Planta> plante)
+        {
+            while (plante.Count > 5)
+            {
+                plante.RemoveAt(plante.Count - 1);
+            }
+            return plante;
+        }
+
+        public static List<Planta> calcul(List<Planta> plante)
+        {
+
+            foreach (Planta planta in plante)
+            {
+                planta.procent = Math.Abs(planta.scor - 2) * 50.0;
+            }
+            foreach (Planta planta in plante)
+            {
+                planta.tone = (planta.tone * planta.procent) / 100.0;
+            }
+            return plante;
+        }
 
         public static List<Planta> best(string sol, int umiditate, int temperatura)
         {
@@ -73,7 +98,9 @@ namespace FarmHelper2.Backend
             }
 
             lista = sortare(lista_finala);
-
+            lista = valid(lista);
+            lista = calcul(lista);
+           
             return lista;
         }
     }

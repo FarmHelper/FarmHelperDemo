@@ -13,7 +13,8 @@ namespace FarmHelper2.Controllers
 
         public IHttpActionResult Post(Parcela plant)
         {
-            Transfer output = new Transfer(Champ.best(plant.pamant, plant.umiditate, plant.umiditate));
+            Transfer output = new Transfer();
+            output.plante = Champ.best(plant.pamant, plant.umiditate, plant.temperatura);
             return Ok();
         }
 

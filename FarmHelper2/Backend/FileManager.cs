@@ -21,7 +21,7 @@ namespace FarmHelper2.Backend
             foreach (string line in lines)
             {
                 string[] param = line.Split(' ');
-                Planta planta = new Planta(param[0], param[1], int.Parse(param[2]), int.Parse(param[3]), int.Parse(param[4]));
+                Planta planta = new Planta(param[0], param[1], int.Parse(param[2]), int.Parse(param[3]), int.Parse(param[4]), double.Parse(param[5]));
                 lista.Add(planta);
             }
 
