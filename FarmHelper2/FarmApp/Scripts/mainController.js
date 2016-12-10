@@ -10,6 +10,8 @@
     function MainController(location, httpService) {
 
         var vm = this;
+        vm.soilTypes = ['a', 'b', 'c'];
+        vm.soil = {};
         vm.startApp = startApp;
 
         function startApp() {

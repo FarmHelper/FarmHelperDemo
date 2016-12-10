@@ -7,13 +7,19 @@ body {
     height: 100%;
 }
 
-footer{
+.copyRight{
+    position: absolute;
+    top: 90%;
+    left: 5%;
+    width: 90%;
     color: white;
     font-size: 1.5em;
 }
 
 .pageContainer{
     height: 90%;
+    padding: 0px;
+    margin: 0px;
 }
 
 .container{
@@ -25,6 +31,16 @@ footer{
 	top: 50%;
 	left: 50%;
 	text-align: center;
+}
+
+.panel-farm{
+    border-color: #ba6c23;
+}
+
+.panel-farm .panel-heading{
+    color: white;
+    background-color: #ba6c23;
+    border-color: #ba6c23;
 }
 
 a.btn-main {

@@ -187,7 +187,6 @@
     <Content Include="FarmApp\app.module.js" />
     <Content Include="FarmApp\appStyle.css" />
     <Content Include="FarmApp\Scripts\httpService.js" />
-    <Content Include="FarmApp\Scripts\landingController.js" />
     <Content Include="FarmApp\Scripts\mainController.js" />
     <Content Include="FarmApp\Views\LandingPage.html" />
     <Content Include="FarmApp\Views\MainPage.html" />
