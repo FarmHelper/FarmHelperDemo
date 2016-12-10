@@ -16,7 +16,7 @@ namespace FarmHelper2.Backend
 
             string[] lines;
 
-            lines = File.ReadAllLines(@"D:\www\FarmHelper\Backend\TextFile1.txt");
+            lines = File.ReadAllLines(@"C:\Users\fast\Source\Repos\FarmHelperDemo\FarmHelper2\Backend\TextFile1.txt");
 
             foreach (string line in lines)
             {

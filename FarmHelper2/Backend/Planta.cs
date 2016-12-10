@@ -15,6 +15,7 @@ namespace FarmHelper2.Backend
         public double procent { get; set; }
         public double tone { get; set; }
         public double pret { get; set; }
+        public double profit { get; set; }
 
         public Planta(string n, string p, int u, int c, int t, double pr)
         {
