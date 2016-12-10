@@ -10,8 +10,10 @@
                     controller: 'LandingController',
                     controllerAs: 'ctrl'
                 })
-                .when("/exams", {
-                    templateUrl: "Template/Exams"
+                .when("/main", {
+                    templateUrl: "FarmApp/Views/MainPage.html",
+                    controller: 'MainController',
+                    controllerAs: 'ctrl'
                 })
                 .when("/questions", {
                     templateUrl: "Template/Questions"

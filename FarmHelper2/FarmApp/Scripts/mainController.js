@@ -3,11 +3,11 @@
 
     angular
         .module('FarmApp')
-        .controller('LandingController', LandingController)
+        .controller('MainController', MainController)
 
-    LandingController.$inject = ['$location', 'httpService'];
+    MainController.$inject = ['$location', 'httpService'];
 
-    function LandingController(location, httpService) {
+    function MainController(location, httpService) {
 
         var vm = this;
         vm.startApp = startApp;
