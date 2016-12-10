@@ -166,6 +166,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Backend\champ.cs" />
     <Compile Include="Backend\FileManager.cs" />
     <Compile Include="Backend\Planta.cs" />
     <Compile Include="Controllers\HomeController.cs" />

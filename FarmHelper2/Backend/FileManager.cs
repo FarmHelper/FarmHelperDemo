@@ -8,11 +8,10 @@ namespace FarmHelper2.Backend
     public class FileManager
     {
 
-        public static void Main()
+        public static List<Planta> ReadFile()
         {
 
-            // These examples assume a "C:\Users\Public\TestFolder" folder on your machine.
-            // You can modify the path if necessary.
+            List<Planta> lista = new List<Planta>();
 
             string[] lines;
 
@@ -23,7 +22,10 @@ namespace FarmHelper2.Backend
             {
                 string[] param = line.Split(' ');
                 Planta planta = new Planta(param[1], param[2], int.Parse(param[3]), int.Parse(param[4]));
+                lista.Add(planta);
             }
+
+            return lista;
 
 
         }

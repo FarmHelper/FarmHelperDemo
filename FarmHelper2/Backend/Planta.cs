@@ -7,10 +7,11 @@ namespace FarmHelper2.Backend
 {
     public class Planta
     {
-        private string nume;
-        private string pamant;
-        private int umiditate;
-        private int temperatura;
+        public string nume { get; set; }
+        public string pamant { get; set; }
+        public int umiditate { get; set; }
+        public int temperatura { get; set;}
+        public double scor { get; set; }
         
 
         public Planta(string n, string p, int u, int t)
