@@ -51,12 +51,12 @@
 <div class="col-md-3 col-md-offset-2">
     <div class="panel panel-farm" ng-show="ctrl.test.planteViabil">
         <div class="panel-heading">
-            Efficiency
+            Randament
         </div>
         <div class="panel-body">
             <div class="col-md-12" ng-repeat="item in ctrl.test.planteViabil">
                 <div class="col-md-9">
-                    <img ng-src="{{item.nume}}?20" class="md-avatar" alt="{{todos[0].who}}" />
+                    <img ng-src="{{item.imgg}}?20" class="md-avatar" alt="{{item.nume}}" />
                     <div class="md-list-item-text">
                         <h3>{{ item.nume }}</h3>
                         <p>Secondary text</p>
@@ -70,5 +70,23 @@
     </div>
 </div>
 <div class="col-md-3">
-    test2
+    <div class="panel panel-farm" ng-show="ctrl.test.planteProfit">
+        <div class="panel-heading">
+            Profit/Ha
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12" ng-repeat="item in ctrl.test.planteProfit">
+                <div class="col-md-9">
+                    <img ng-src="{{item.imgg}}?20" class="md-avatar" alt="{{item.nume}}" />
+                    <div class="md-list-item-text">
+                        <h3>{{ item.nume }}</h3>
+                        <p>Secondary text</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h2>{{ item.profit * 5 }} RON</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
