@@ -14,10 +14,10 @@
         <div class="pageContainer">
             @RenderBody()
         </div>
-        <hr />
-        <footer>
+        <div class="copyRight">
+            <hr />
             <p>&copy; @DateTime.Now.Year - Hermes Hackathon Team YOLO</p>
-        </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
@@ -35,7 +35,6 @@
 
     <script src="~/FarmApp/app.module.js"></script>
     <script src="~/FarmApp/Scripts/httpService.js"></script>
-    <script src="~/FarmApp/Scripts/landingController.js"></script>
     <script src="~/FarmApp/Scripts/mainController.js"></script>
 
     @RenderSection("scripts", required: false)

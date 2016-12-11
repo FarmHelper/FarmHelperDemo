@@ -10,14 +10,24 @@
     function MainController(location, httpService) {
 
         var vm = this;
-        vm.startApp = startApp;
+        vm.soilTypes = ['Fertil', 'Argilos', 'Arid'];
+        vm.soil = {};
+        vm.sendSoil = sendSoil;
 
-        function startApp() {
-            alert('Hello')
-            location.path('/main')
-            //vm.data = {}
-            //vm.data.umiditate = 3
-            //httpService.post('api/Plants', vm.data);
+        function sendSoil() {
+            /*if (isNaN(soil.umiditate)) {
+                ngToast.warning({
+                    content: 'Humidity should be between 0 and 100'
+                });
+                return;
+            }
+            if (isNaN(soil.temperatura)) {
+                ngToast.warning({
+                    content: 'Temperature should be between 0 and 40'
+                });
+                return;
+            }*/
+            httpService.post('api/Plants', vm.soil);
         }
 
     }

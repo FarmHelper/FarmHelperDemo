@@ -6,9 +6,7 @@
         .config(function ($routeProvider) {
             $routeProvider
                 .when("/landing", {
-                    templateUrl: "FarmApp/Views/LandingPage.html",
-                    controller: 'LandingController',
-                    controllerAs: 'ctrl'
+                    templateUrl: "FarmApp/Views/LandingPage.html"
                 })
                 .when("/main", {
                     templateUrl: "FarmApp/Views/MainPage.html",

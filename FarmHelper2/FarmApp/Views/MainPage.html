@@ -1,1 +1,37 @@
-﻿<h1>Hello faggots!</h1>
+﻿<h1>Let's farm!</h1>
+<div class="col-md-6">
+    <div class="panel panel-farm">
+        <div class="panel-heading">
+            Your soil
+        </div>
+        <div class="panel-body">
+            <!--<md-input-container class="md-block" flex-gt-sm>
+                <label>Soil type</label>
+                <md-select ng-model="ctrl.soil.type">
+                    <md-option ng-repeat="soilType in ctrl.soilTypes" value="{{soilType}}">
+                        {{soilType}}
+                    </md-option>
+                </md-select>
+            </md-input-container>-->
+            <select ng-model="ctrl.soil.type" ng-options="soilType for soilType in ctrl.soilTypes"></select>
+            <input type="number"
+                   ng-model="ctrl.soil.umiditate"
+                   name="Umid"
+                   min="0"
+                   max="100"
+                   ng-step="1" />
+            <input type="number"
+                   ng-model="ctrl.soil.temperatura"
+                   name="Temp"
+                   min="0"
+                   max="40"
+                   ng-step="1" />
+            <div class="btn-lg btn-danger" ng-click="ctrl.sendSoil()">
+                Click Me!
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+
+</div>
