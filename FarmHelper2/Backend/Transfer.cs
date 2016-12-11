@@ -7,6 +7,8 @@ namespace FarmHelper2.Backend
 {
     public class Transfer
     {
-        public List<Planta> plante;
+        public List<Planta> planteViabil;
+        public List<Planta> planteProfit;
+        public string bestOption;
     }
 }

@@ -12,7 +12,8 @@ namespace FarmHelper2
         {
             // Web API configuration and services
 
-            List<Planta> lista = Champ.best("Fertil", 20, 16);
+            List<Planta> lista = Champ.best("Fertil", 30, 16,1);
+            string str = Champ.bestOption(lista);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
