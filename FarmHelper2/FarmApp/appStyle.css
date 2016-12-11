@@ -16,6 +16,13 @@ body {
     font-size: 1.5em;
 }
 
+.btn-farm{
+    color: white;
+    background-color: #ba6c23;
+    border-color: #aa5c13;
+    text-align: center;
+}
+
 .pageContainer{
     height: 90%;
     padding: 0px;
@@ -41,6 +48,12 @@ body {
     color: white;
     background-color: #ba6c23;
     border-color: #ba6c23;
+    font-size: 1.5em;
+}
+
+.vert-wrap{
+    top: 50%;
+    margin-top: -25%;
 }
 
 a.btn-main {
