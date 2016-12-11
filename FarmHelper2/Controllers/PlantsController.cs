@@ -14,8 +14,8 @@ namespace FarmHelper2.Controllers
         public IHttpActionResult Post(Parcela plant)
         {
             Transfer output = new Transfer();
-            output.planteViabil = Champ.best(plant.pamant, plant.umiditate, plant.temperatura,0);
-            output.planteProfit = Champ.best(plant.pamant, plant.umiditate, plant.temperatura, 1);
+            output.planteViabil = Champ.best(plant.pamant, plant.umiditate, plant.temperatura,0,plant);
+            output.planteProfit = Champ.best(plant.pamant, plant.umiditate, plant.temperatura, 1,plant);
             output.bestOption = Champ.bestOption(output.planteViabil);
 
             return Ok(output);

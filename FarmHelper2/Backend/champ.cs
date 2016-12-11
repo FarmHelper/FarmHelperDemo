@@ -32,6 +32,7 @@ namespace FarmHelper2.Backend
                 aux.umiditate = lista[i].umiditate;
                 aux.tone = lista[i].tone;
                 aux.pret = lista[i].pret;
+                aux.procent = lista[i].procent;
 
                 lista[i].nume = lista[t].nume;
                 lista[i].pamant = lista[t].pamant;
@@ -40,6 +41,7 @@ namespace FarmHelper2.Backend
                 lista[i].umiditate = lista[t].umiditate;
                 lista[i].tone = lista[t].tone;
                 lista[i].pret = lista[t].pret;
+                lista[i].procent = lista[t].procent;
 
                 lista[t].nume = aux.nume;
                 lista[t].pamant = aux.pamant;
@@ -48,6 +50,7 @@ namespace FarmHelper2.Backend
                 lista[t].umiditate = aux.umiditate;
                 lista[t].tone = aux.tone;
                 lista[t].pret = aux.pret;
+                lista[t].procent = aux.procent;
             }
 
             return lista;
@@ -79,6 +82,7 @@ namespace FarmHelper2.Backend
                 aux.tone = lista[i].tone;
                 aux.pret = lista[i].pret;
                 aux.profit = lista[i].profit;
+                aux.procent = lista[i].procent;
 
                 lista[i].nume = lista[t].nume;
                 lista[i].pamant = lista[t].pamant;
@@ -88,6 +92,7 @@ namespace FarmHelper2.Backend
                 lista[i].tone = lista[t].tone;
                 lista[i].pret = lista[t].pret;
                 lista[i].profit = lista[t].profit;
+                lista[i].procent = lista[t].procent;
 
                 lista[t].nume = aux.nume;
                 lista[t].pamant = aux.pamant;
@@ -97,6 +102,7 @@ namespace FarmHelper2.Backend
                 lista[t].tone = aux.tone;
                 lista[t].pret = aux.pret;
                 lista[t].profit = aux.profit;
+                lista[t].procent = aux.procent;
             }
 
             return lista;
@@ -112,7 +118,7 @@ namespace FarmHelper2.Backend
             return plante;
         }
 
-        public static List<Planta> calcul(List<Planta> plante)
+        public static List<Planta> calcul(List<Planta> plante, Parcela par)
         {
 
             foreach (Planta planta in plante)
@@ -128,6 +134,7 @@ namespace FarmHelper2.Backend
             foreach (Planta planta in plante)
             {
                 planta.profit = planta.tone * planta.pret;
+                planta.profit -= (par.utilaje[0] * 90 + par.utilaje[1] * 90 + par.utilaje[2] * 40 + par.utilaje[3] * 60);
             }
 
             return plante;
@@ -135,7 +142,7 @@ namespace FarmHelper2.Backend
             
         }
 
-        public static List<Planta> best(string sol, int umiditate, int temperatura, int tip)
+        public static List<Planta> best(string sol, int umiditate, int temperatura, int tip, Parcela par)
         {
             List<Planta> lista = FileManager.ReadFile();
 
@@ -147,16 +154,16 @@ namespace FarmHelper2.Backend
             {
                 scor = 0;
 
-                if ((planta.pamant == sol || planta.pamant == "Toate") && Math.Abs(umiditate-planta.umiditate)<=10 && Math.Abs(temperatura-planta.temperatura)<=5)
+                if ((planta.pamant == sol || planta.pamant == "Toate") && Math.Abs(umiditate-planta.umiditate)<=10 && Math.Abs(temperatura-planta.temperatura)<=10)
                 {
-                    scor = Math.Abs(umiditate-planta.umiditate) / 10.0 + Math.Abs(temperatura-planta.temperatura) / 5.0;
+                    scor = Math.Abs(umiditate-planta.umiditate) / 10.0 + Math.Abs(temperatura-planta.temperatura) / 10.0;
                     planta.scor = scor;
                     lista_finala.Add(planta);
                 }
             }
 
             lista = valid(lista_finala);
-            lista = calcul(lista);
+            lista = calcul(lista, par);
 
             if (tip == 0) lista = sortare(lista);
             if (tip == 1) lista = sortare1(lista);
