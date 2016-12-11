@@ -2,7 +2,7 @@
 <div class="col-md-2 col-md-offset-1">
     <div class="panel panel-farm">
         <div class="panel-heading">
-            Parcela
+            Pamant
         </div>
         <div class="panel-body">
             <md-input-container class="md-block" flex-gt-sm>
@@ -23,7 +23,7 @@
                 <input required type="number" step="1" name="temp" ng-model="ctrl.soil.temperatura" min="0"
                        max="40" />
             </md-input-container>
-            <label>Costuri suplimentare</label>
+            <label>Costuri neasigurate</label>
             <md-list>
                 <md-list-item>
                     <p>Arat</p>
@@ -57,14 +57,17 @@
             <md-content>
                 <md-list flex>
                     <md-list-item class="md-1-line" ng-repeat="item in ctrl.test.planteViabil">
+                        <md-tooltip>
+                            Umiditate optima: {{item.umiditate}}   -   Temperatura optima: {{item.temperatura}}
+                        </md-tooltip>
                         <img ng-src="{{item.img}}" class="col-md-3 pull-left md-avatar" alt="{{item.nume}}" />
                         <div class="md-list-item-text col-md-6">
                             <h3>{{ item.nume }}</h3>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 pull-right">
                             <h3>{{ item.procent }}%</h3>
                         </div>
-                    </div>
+                    </md-list-item>
                 </md-list>
             </md-content>
         </div>
@@ -80,14 +83,17 @@
             <md-content>
                 <md-list flex>
                     <md-list-item class="md-1-line" ng-repeat="item in ctrl.test.planteProfit">
+                        <md-tooltip>
+                            Umiditate optima: {{item.umiditate}}   -   Temperatura optima: {{item.temperatura}}
+                        </md-tooltip>
                         <img ng-src="{{item.img}}" class="col-md-2 pull-left md-avatar" alt="{{item.nume}}" />
                         <div class="md-list-item-text col-md-5">
                             <h3>{{ item.nume }}</h3>
                         </div>
-                        <div class="col-md-5" style="text-align: right;">
+                        <div class="col-md-5 pull-right" style="text-align: right;">
                             <h3>{{ item.profit }}</h3>
                         </div>
-                    </div>
+                    </md-list-item>
                 </md-list>
             </md-content>
         </div>
