@@ -12,6 +12,7 @@
         var vm = this;
         vm.soilTypes = ['Fertil', 'Argilos', 'Arid'];
         vm.soil = {};
+        vm.soil.utilaje = [false, false, false, false];
         vm.sendSoil = sendSoil;
         $scope.soi = {
             umiditate: 500
