@@ -18,7 +18,7 @@ namespace FarmHelper2.Controllers
             output.planteProfit = Champ.best(plant.pamant, plant.umiditate, plant.temperatura, 1);
             output.bestOption = Champ.bestOption(output.planteViabil);
 
-            return Ok();
+            return Ok(output);
         }
 
     }

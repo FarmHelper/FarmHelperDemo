@@ -27,7 +27,9 @@
                 });
                 return;
             }*/
-            httpService.post('api/Plants', vm.soil);
+            httpService.post('api/Plants', vm.soil).then(function(data){
+                vm.test = data;
+            });
         }
 
     }

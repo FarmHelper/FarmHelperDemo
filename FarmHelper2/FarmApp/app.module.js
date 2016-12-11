@@ -2,7 +2,7 @@
     'use strict'
 
     angular
-        .module('FarmApp', ['ngRoute', 'ngAnimate', 'ngAria', 'ngMaterial'])
+        .module('FarmApp', ['ngRoute', 'ngAnimate', 'ngAria', 'ngMaterial', 'ngMessages'])
         .config(function ($routeProvider) {
             $routeProvider
                 .when("/landing", {

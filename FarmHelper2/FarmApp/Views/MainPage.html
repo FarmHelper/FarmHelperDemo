@@ -5,21 +5,33 @@
             Your soil
         </div>
         <div class="panel-body">
-            <!--<md-input-container class="md-block" flex-gt-sm>
+            <md-input-container class="md-block" flex-gt-sm>
                 <label>Soil type</label>
-                <md-select ng-model="ctrl.soil.type">
+                <md-select ng-model="ctrl.soil.pamant">
                     <md-option ng-repeat="soilType in ctrl.soilTypes" value="{{soilType}}">
                         {{soilType}}
                     </md-option>
                 </md-select>
-            </md-input-container>-->
-            <select ng-model="ctrl.soil.type" ng-options="soilType for soilType in ctrl.soilTypes"></select>
-            <input type="number"
-                   ng-model="ctrl.soil.umiditate"
-                   name="Umid"
-                   min="0"
-                   max="100"
-                   ng-step="1" />
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Hmidity</label>
+                <input required type="number" step="1" name="umid" ng-model="ctrl.soil.umiditate" min="0"
+                       max="100" />
+
+                <div ng-messages="ctrl.soil.umiditate.$error" multiple md-auto-hide="false">
+                    <div ng-message="required">
+                        You have to set the humidity of the soil
+                    </div>
+
+                    <div ng-message="min">
+                        It cannot be that dry
+                    </div>
+
+                    <div ng-message="max">
+                        It cannot be that humid
+                    </div>
+                </div>
+            </md-input-container>
             <input type="number"
                    ng-model="ctrl.soil.temperatura"
                    name="Temp"
