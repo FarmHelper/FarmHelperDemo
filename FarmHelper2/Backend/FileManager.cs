@@ -25,6 +25,13 @@ namespace FarmHelper2.Backend
                 lista.Add(planta);
             }
 
+            lines = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Backend\\TextFile2.txt"));
+
+            for(int i = 0; i < lines.Count();i++)
+            {
+                lista[i].img = lines[i];
+            }
+
             return lista;
 
 

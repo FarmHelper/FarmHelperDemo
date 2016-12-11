@@ -124,6 +124,7 @@ namespace FarmHelper2.Backend
             foreach (Planta planta in plante)
             {
                 planta.procent = Math.Abs(planta.scor - 2) * 50.0;
+                planta.procent = Math.Round(planta.procent, 2);
             }
 
             foreach (Planta planta in plante)

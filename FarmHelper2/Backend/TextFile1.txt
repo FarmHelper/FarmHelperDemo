@@ -10,5 +10,5 @@ Ovaz Fertil 30 16 2900 0.283
 Cartof Fertil 20 16 50000 0.2
 Varza Fertil 35 22 35000 0.3
 Sfecla Argilos 40 16 87000 0.037
-Pepene Argilos 25 22 20000 1.28
+Pepene Argilos 25 22 20000 0.416
 Dovleac Arid 50 25 30000 1.6
