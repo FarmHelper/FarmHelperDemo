@@ -32,6 +32,7 @@ namespace FarmHelper2.Backend
                 aux.umiditate = lista[i].umiditate;
                 aux.tone = lista[i].tone;
                 aux.pret = lista[i].pret;
+                aux.profit = lista[i].profit;
                 aux.procent = lista[i].procent;
                 aux.img = lista[i].img;
 
@@ -42,6 +43,7 @@ namespace FarmHelper2.Backend
                 lista[i].umiditate = lista[t].umiditate;
                 lista[i].tone = lista[t].tone;
                 lista[i].pret = lista[t].pret;
+                lista[i].profit = lista[t].profit;
                 lista[i].procent = lista[t].procent;
                 lista[i].img = lista[t].img;
 
@@ -52,6 +54,7 @@ namespace FarmHelper2.Backend
                 lista[t].umiditate = aux.umiditate;
                 lista[t].tone = aux.tone;
                 lista[t].pret = aux.pret;
+                lista[t].profit = aux.profit;
                 lista[t].procent = aux.procent;
                 lista[t].img = aux.img;
             }
@@ -141,7 +144,6 @@ namespace FarmHelper2.Backend
             foreach (Planta planta in plante)
             {
                 planta.profit = planta.tone * planta.pret;
-                planta.profit = Math.Round(planta.profit, 2);
                 int[] plataUtil = { 90, 90, 40, 60 };
                 for(int i = 0; i <= 3; i++)
                 {
@@ -150,6 +152,7 @@ namespace FarmHelper2.Backend
                         planta.profit -= plataUtil[i];
                     }
                 }
+                planta.profit = Math.Round(planta.profit, 2);
                 //planta.profit -= (par.utilaje[0] * 90 + par.utilaje[1] * 90 + par.utilaje[2] * 40 + par.utilaje[3] * 60);
             }
 
@@ -202,7 +205,7 @@ namespace FarmHelper2.Backend
                 }
             }
 
-            best = bestPlanta.nume.ToString() + ": Profit/ha " + bestPlanta.profit.ToString() + " £";
+            best = bestPlanta.nume.ToString() + ": Profit/Ha " + bestPlanta.profit.ToString() + " RON";
 
             return best;
         }

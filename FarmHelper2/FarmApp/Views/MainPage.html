@@ -54,39 +54,52 @@
             Randament
         </div>
         <div class="panel-body">
-            <div class="col-md-12" ng-repeat="item in ctrl.test.planteViabil">
-                <div class="col-md-9">
-                    <img ng-src="{{item.imgg}}?20" class="md-avatar" alt="{{item.nume}}" />
-                    <div class="md-list-item-text">
-                        <h3>{{ item.nume }}</h3>
-                        <p>Secondary text</p>
+            <md-content>
+                <md-list flex>
+                    <md-list-item class="md-1-line" ng-repeat="item in ctrl.test.planteViabil">
+                        <img ng-src="{{item.img}}" class="col-md-3 pull-left md-avatar" alt="{{item.nume}}" />
+                        <div class="md-list-item-text col-md-6">
+                            <h3>{{ item.nume }}</h3>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>{{ item.procent }}%</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <h2>{{ item.procent }}%</h2>
-                </div>
-            </div>
+                </md-list>
+            </md-content>
         </div>
     </div>
 </div>
 <div class="col-md-3">
     <div class="panel panel-farm" ng-show="ctrl.test.planteProfit">
         <div class="panel-heading">
-            Profit/Ha
+            Profit / Ha
+            <div class="pull-right" style="margin-right: 30px;">RON</div>
         </div>
         <div class="panel-body">
-            <div class="col-md-12" ng-repeat="item in ctrl.test.planteProfit">
-                <div class="col-md-9">
-                    <img ng-src="{{item.imgg}}?20" class="md-avatar" alt="{{item.nume}}" />
-                    <div class="md-list-item-text">
-                        <h3>{{ item.nume }}</h3>
-                        <p>Secondary text</p>
+            <md-content>
+                <md-list flex>
+                    <md-list-item class="md-1-line" ng-repeat="item in ctrl.test.planteProfit">
+                        <img ng-src="{{item.img}}" class="col-md-2 pull-left md-avatar" alt="{{item.nume}}" />
+                        <div class="md-list-item-text col-md-5">
+                            <h3>{{ item.nume }}</h3>
+                        </div>
+                        <div class="col-md-5" style="text-align: right;">
+                            <h3>{{ item.profit }}</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <h2>{{ item.profit * 5 }} RON</h2>
-                </div>
-            </div>
+                </md-list>
+            </md-content>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-md-offset-2">
+    <div class="panel panel-farm" ng-show="ctrl.test.bestOption">
+        <div class="panel-heading">
+            Recomandare
+        </div>
+        <div class="panel-body" style="font-size: 2em;">
+            {{ ctrl.test.bestOption }}
         </div>
     </div>
 </div>
