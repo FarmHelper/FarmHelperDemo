@@ -135,7 +135,15 @@ namespace FarmHelper2.Backend
             foreach (Planta planta in plante)
             {
                 planta.profit = planta.tone * planta.pret;
-                planta.profit -= (par.utilaje[0] * 90 + par.utilaje[1] * 90 + par.utilaje[2] * 40 + par.utilaje[3] * 60);
+                int[] plataUtil = { 90, 90, 40, 60 };
+                for(int i = 0; i < 3; i++)
+                {
+                    if (par.utilaje[i])
+                    {
+                        planta.profit -= plataUtil[i];
+                    }
+                }
+                //planta.profit -= (par.utilaje[0] * 90 + par.utilaje[1] * 90 + par.utilaje[2] * 40 + par.utilaje[3] * 60);
             }
 
             return plante;

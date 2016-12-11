@@ -11,7 +11,7 @@ namespace FarmHelper2.Backend
         public string pamant;
         public int umiditate;
         public int temperatura;
-        public int[] utilaje;
+        public bool[] utilaje;
 
     }
 }
