@@ -5,26 +5,23 @@
         .module('FarmApp')
         .controller('MainController', MainController)
 
-    MainController.$inject = ['$location', 'httpService'];
+    MainController.$inject = ['$scope', '$location', 'httpService'];
 
-    function MainController(location, httpService) {
+    function MainController($scope, location, httpService) {
 
         var vm = this;
         vm.soilTypes = ['Fertil', 'Argilos', 'Arid'];
         vm.soil = {};
         vm.sendSoil = sendSoil;
+        $scope.soi = {
+            umiditate: 500
+        };
 
         function sendSoil() {
             /*if (isNaN(soil.umiditate)) {
-                ngToast.warning({
-                    content: 'Humidity should be between 0 and 100'
-                });
                 return;
             }
             if (isNaN(soil.temperatura)) {
-                ngToast.warning({
-                    content: 'Temperature should be between 0 and 40'
-                });
                 return;
             }*/
             httpService.post('api/Plants', vm.soil).then(function(data){

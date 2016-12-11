@@ -1,12 +1,12 @@
-﻿<h1>Let's farm!</h1>
-<div class="col-md-6">
+﻿<div style="padding-top: 200px; width: 100%;"></div>
+<div class="col-md-2 col-md-offset-1">
     <div class="panel panel-farm">
         <div class="panel-heading">
             Your soil
         </div>
         <div class="panel-body">
             <md-input-container class="md-block" flex-gt-sm>
-                <label>Soil type</label>
+                <label>Soil Type</label>
                 <md-select ng-model="ctrl.soil.pamant">
                     <md-option ng-repeat="soilType in ctrl.soilTypes" value="{{soilType}}">
                         {{soilType}}
@@ -14,36 +14,42 @@
                 </md-select>
             </md-input-container>
             <md-input-container class="md-block">
-                <label>Hmidity</label>
+                <label>Humidity</label>
                 <input required type="number" step="1" name="umid" ng-model="ctrl.soil.umiditate" min="0"
                        max="100" />
-
-                <div ng-messages="ctrl.soil.umiditate.$error" multiple md-auto-hide="false">
-                    <div ng-message="required">
-                        You have to set the humidity of the soil
-                    </div>
-
-                    <div ng-message="min">
-                        It cannot be that dry
-                    </div>
-
-                    <div ng-message="max">
-                        It cannot be that humid
-                    </div>
-                </div>
             </md-input-container>
-            <input type="number"
-                   ng-model="ctrl.soil.temperatura"
-                   name="Temp"
-                   min="0"
-                   max="40"
-                   ng-step="1" />
-            <div class="btn-lg btn-danger" ng-click="ctrl.sendSoil()">
-                Click Me!
+            <md-input-container class="md-block">
+                <label>Temperature</label>
+                <input required type="number" step="1" name="temp" ng-model="ctrl.soil.temperatura" min="0"
+                       max="40" />
+            </md-input-container>
+            <div class="btn-lg btn-farm" ng-click="ctrl.sendSoil()">
+                Generate
             </div>
         </div>
     </div>
 </div>
-<div class="col-md-6">
-
+<div class="col-md-3 col-md-offset-2">
+    <div class="panel panel-farm" ng-show="ctrl.test.planteViabil">
+        <div class="panel-heading">
+            Efficiency
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12" ng-repeat="item in ctrl.test.planteViabil">
+                <div class="col-md-9">
+                    <img ng-src="{{item.nume}}?20" class="md-avatar" alt="{{todos[0].who}}" />
+                    <div class="md-list-item-text">
+                        <h3>{{ item.nume }}</h3>
+                        <p>Secondary text</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h2>{{ item.procent }}%</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+    test2
 </div>
