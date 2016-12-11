@@ -33,6 +33,7 @@ namespace FarmHelper2.Backend
                 aux.tone = lista[i].tone;
                 aux.pret = lista[i].pret;
                 aux.procent = lista[i].procent;
+                aux.img = lista[i].img;
 
                 lista[i].nume = lista[t].nume;
                 lista[i].pamant = lista[t].pamant;
@@ -42,6 +43,7 @@ namespace FarmHelper2.Backend
                 lista[i].tone = lista[t].tone;
                 lista[i].pret = lista[t].pret;
                 lista[i].procent = lista[t].procent;
+                lista[i].img = lista[t].img;
 
                 lista[t].nume = aux.nume;
                 lista[t].pamant = aux.pamant;
@@ -51,6 +53,7 @@ namespace FarmHelper2.Backend
                 lista[t].tone = aux.tone;
                 lista[t].pret = aux.pret;
                 lista[t].procent = aux.procent;
+                lista[t].img = aux.img;
             }
 
             return lista;
@@ -83,6 +86,7 @@ namespace FarmHelper2.Backend
                 aux.pret = lista[i].pret;
                 aux.profit = lista[i].profit;
                 aux.procent = lista[i].procent;
+                aux.img = lista[i].img;
 
                 lista[i].nume = lista[t].nume;
                 lista[i].pamant = lista[t].pamant;
@@ -93,6 +97,7 @@ namespace FarmHelper2.Backend
                 lista[i].pret = lista[t].pret;
                 lista[i].profit = lista[t].profit;
                 lista[i].procent = lista[t].procent;
+                lista[i].img = lista[t].img;
 
                 lista[t].nume = aux.nume;
                 lista[t].pamant = aux.pamant;
@@ -103,6 +108,7 @@ namespace FarmHelper2.Backend
                 lista[t].pret = aux.pret;
                 lista[t].profit = aux.profit;
                 lista[t].procent = aux.procent;
+                lista[t].img = aux.img;
             }
 
             return lista;
@@ -135,8 +141,9 @@ namespace FarmHelper2.Backend
             foreach (Planta planta in plante)
             {
                 planta.profit = planta.tone * planta.pret;
+                planta.profit = Math.Round(planta.profit, 2);
                 int[] plataUtil = { 90, 90, 40, 60 };
-                for(int i = 0; i < 3; i++)
+                for(int i = 0; i <= 3; i++)
                 {
                     if (par.utilaje[i])
                     {
